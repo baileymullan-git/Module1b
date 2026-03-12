@@ -31,21 +31,5 @@ npm run build
 npm run preview
 ```
 
-## Marking-scheme mapping
-- App is unclassified: uses only public Police open data.
-- App is responsive: mobile and desktop CSS layout included.
-- Connects to a Government API: Police API (`data.police.uk`).
-- Allows additional user interactions and multiple calls:
-  - force selection -> force + neighbourhood calls
-  - neighbourhood selection -> detail + events + boundary calls
-  - month selection -> crime summary call
-- Uses open source framework: React.
-- Easy UX: guided step-by-step sections with loading/error states.
-- No database: API-driven frontend only.
 
-## Evidence files in this repository
-- Marking scheme: `JCS Module 1B Marking scheme.docx`
-- Course certificate: `LCpl Bailey Mullan - Angular Udemy Cert.jpg`
 
-## Source code link for submission
-- GitHub repo link: `https://github.com/baileymullan-git/Module1b`
