@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700&family=Space+Grotesk:wght@400;500;700&display=swap");
+
+:root {
+  --bg-top: #f4f8fb;
+  --bg-bottom: #d8e6f0;
+  --panel: #ffffff;
+  --text: #1b2630;
+  --muted: #5f6f7f;
+  --brand: #005ea5;
+  --brand-soft: #e6f1fa;
+  --danger: #a1122f;
+  --line: #d8e0e8;
+  --shadow: 0 14px 34px rgba(10, 30, 55, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(0, 94, 165, 0.12) 0, transparent 34%),
+    radial-gradient(circle at 92% 0%, rgba(39, 124, 80, 0.11) 0, transparent 26%),
+    linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  width: min(1150px, 100% - 2rem);
+  margin: 0 auto;
+  padding: 1.25rem 0 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.1rem 1.2rem;
+  box-shadow: var(--shadow);
+  animation: rise 0.45s ease both;
+}
+
+.hero {
+  background:
+    linear-gradient(120deg, rgba(0, 94, 165, 0.14), rgba(39, 124, 80, 0.12)),
+    var(--panel);
+}
+
+.tag {
+  display: inline-flex;
+  margin: 0;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 94, 165, 0.35);
+  color: var(--brand);
+  background: var(--brand-soft);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+h1,
+h2 {
+  margin: 0;
+  font-family: "Barlow Condensed", "Segoe UI", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+h1 {
+  margin-top: 0.6rem;
+  font-size: clamp(1.85rem, 4vw, 2.7rem);
+}
+
+h2 {
+  margin-bottom: 0.8rem;
+  font-size: 1.45rem;
+}
+
+p {
+  margin: 0.4rem 0;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--brand);
+}
+
+label {
+  display: block;
+  margin: 0.6rem 0 0.28rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  height: 2.6rem;
+  border-radius: 10px;
+  border: 1px solid #b7c5d1;
+  padding: 0 0.75rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: inherit;
+  background: #fff;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--brand);
+  outline: 2px solid rgba(0, 94, 165, 0.16);
+  outline-offset: 1px;
+}
+
+.status-row {
+  margin-top: 0.65rem;
+}
+
+.status,
+.error,
+.meta {
+  font-size: 0.9rem;
+}
+
+.status {
+  color: var(--brand);
+}
+
+.error {
+  color: var(--danger);
+}
+
+.meta {
+  color: var(--muted);
+}
+
+.grid-2 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.detail-list p {
+  margin: 0.3rem 0;
+}
+
+.event-list,
+.crime-list {
+  list-style: none;
+  margin: 0.65rem 0 0;
+  padding: 0;
+}
+
+.event-list li {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.65rem;
+  margin-bottom: 0.55rem;
+  background: #fcfdff;
+}
+
+.crime-block {
+  margin-top: 0.75rem;
+}
+
+.crime-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 0.52rem 0.64rem;
+  border-radius: 8px;
+  margin-bottom: 0.42rem;
+  background: #eef4f8;
+}
+
+.crime-label {
+  text-transform: capitalize;
+}
+
+.crime-value {
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .app-shell {
+    width: min(1150px, 100% - 1rem);
+    padding-top: 0.8rem;
+  }
+
+  .panel {
+    padding: 0.9rem;
+    border-radius: 12px;
+  }
+
+  h2 {
+    font-size: 1.24rem;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
